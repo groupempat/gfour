@@ -15,7 +15,6 @@ mongoose
         console.log(error);
     });
     
-
 const db = mongoose.connection;
 
 module.exports = db;

@@ -3,7 +3,6 @@ const LocalStrategy = require("passport-local").Strategy;
 const { User } = require("../models");
 const { compared } = require("../helpers");
 
-
 const localPassport =() => {
     passport.use(
         "local",

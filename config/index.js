@@ -3,7 +3,6 @@ const db = require("./database");
 const { ensureAuthenticate, forwardAuthenticate } = require("./auth");
 const localPassport = require("./passport")
 
-
 module.exports = {
     PORT,
     db,

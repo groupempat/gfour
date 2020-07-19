@@ -75,5 +75,4 @@ deleteBook: async (req, res) => {
           res.send(error);
         }
       }, 
-       
 };
