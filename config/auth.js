@@ -17,6 +17,7 @@ const forwardAuthenticate = (req, res, next) => {
     res.redirect("/users/dashboard");
 };
 
+
 module.exports = {
     ensureAuthenticate,
     forwardAuthenticate,
