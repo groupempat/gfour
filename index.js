@@ -10,7 +10,9 @@ const { PORT, db, SESSION_SECRET } = require("./config");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-require("./config/passport")(passport);
+require("./config").localPassport();
+
+// require("./config/passport")(passport);
 
 app.use(
     session({
@@ -34,8 +36,6 @@ app.use((req, res, next) => {
 
 app.use(expressLayout);
 app.set("view engine", "ejs");
-
-
 
 // app.get("/", (req, res) => {
 //     res.send({ message: "Welcome to my API with passport" });
