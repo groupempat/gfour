@@ -1,8 +1,10 @@
+const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const { User } = require("../models");
 const { compared } = require("../helpers");
 
-module.exports = (passport) => {
+
+const localPassport =() => {
     passport.use(
         "local",
         new LocalStrategy(
@@ -39,3 +41,5 @@ module.exports = (passport) => {
         });
     });
 };
+
+module.exports = localPassport;

@@ -5,3 +5,5 @@ module.exports = {
     DATABASE: process.env.DATABASE,
     SESSION_SECRET: process.env.SESSION_SECRET,
 };
+
+
