@@ -1,0 +1,115 @@
+<h1>BOOKS</h1>
+<div>
+    <button
+    type="button"
+    class="btn btn-info btn-lg"
+    data-toggle="modal"
+    data-target="#add"
+  >
+    <i class="fa fa-pencil-square-o">Add Book</i>
+  </div>
+<table id="example" class="table table-striped table-bordered mt-1" style="width: 100%;">
+    <thead class="thead-dark">
+      <tr>
+        <th>No</th>
+        <th>Book Title</th>
+        <th>Author</th>
+        <th>Quatity</th>
+        <th>Price</th>
+        <th>User</th>
+        <th>Update/Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let i= 0; i < results.length; i++) { %>
+      <tr>
+        <td><%= i+1; %></td>
+        <td><%= results[i].title %></td>
+        <td><%= results[i].author %></td>
+        <td><%= results[i].quantity %></td>
+        <td><%= results[i].price %></td>
+        <td><%= results[i]._id.fullname %></td>
+        <td>
+            <button
+              type="button"
+              class="btn btn-primary btn-sm"
+              data-toggle="modal"
+              data-target="#edit"
+            >
+              <i class="fa fa-pencil-square-o"> Edit</i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger btn-sm"
+              data-toggle="modal"
+              data-target="#delete"
+            >
+              <i class="fa fa-minus-circle"> Delete</i>
+            </button>
+          </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+
+  <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="add" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editLabel">Add Book</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" required/>
+            <small id="nameProductHelp" class="form-text text-muted"
+              >Required</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="desc">Price</label>
+            <input type="text" class="form-control" id="desc" />
+            <small id="typeProductHelp" class="form-text text-muted"
+              >Required</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="year">Quantity</label>
+            <input type="text" class="form-control" id="year" />
+            <small id="price" class="form-text text-muted"
+              >Required</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="genre">Author</label>
+            <input type="text" class="form-control" id="genre" />
+            <small id="price" class="form-text text-muted"
+              >Required</small
+            >
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

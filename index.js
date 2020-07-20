@@ -35,10 +35,13 @@ app.use((req, res, next) => {
 app.use(expressLayout);
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
-    res.send({ message: "Welcome to my API with passport" });
-});
-app.use("/users", require("./routes/users"));
+
+
+// app.get("/", (req, res) => {
+//     res.send({ message: "Welcome to my API with passport" });
+// });
+app.use("/", require("./routes/users"));
+app.use("/", require("./routes/books"));
 
 if (db) {
     app.listen(PORT, () => {
