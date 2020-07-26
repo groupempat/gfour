@@ -1,23 +1,26 @@
 const mongoose = require("mongoose");
-const { models } = require("../config/database");
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
-    username: {
+const BookSchema = new Schema({
+    title: {
         type: String,
         required: true,
     },
-    email: {
+    price: {
+        type: Number,
+        required: true,
+    },
+    quantity: {
+        type: Number,
+        required: true,
+    },
+    author: {
         type: String,
         required: true,
     },
-    password: {
-        type: String,
-        required: true,
-    },
-    fullname: {
-        type: String,
-        required: true,
+    UserID: {
+        type: Schema.Types.ObjectId,
+        ref: "users",
     },
     createdAt: {
         type: Date,
@@ -29,7 +32,6 @@ const UserSchema = new Schema({
     },
 });
 
+const Book = mongoose.model("books", BookSchema);
 
-const User = mongoose.model("users", UserSchema);
-
-module.exports = User;
+module.exports = Book;

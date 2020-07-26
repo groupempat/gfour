@@ -32,14 +32,15 @@ module.exports = {
                     fullname,
                     username,
                 });
-                res.redirect("/users/login");
+                res.redirect("/login");
             }
         } catch (error) {
             console.log(error);
         }
     },
+    
     logout: (req, res) => {
         req.logout();
-        res.redirect("/users/login");
+        res.redirect("/login");
     },
 };

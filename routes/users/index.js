@@ -9,8 +9,8 @@ router.get("/login", forwardAuthenticate, require("./controller").login);
 router.post("/register", require("./controller").create);
 router.post("/login", (req, res, next) => {
     passport.authenticate("local", {
-        successRedirect: "/users/dashboard",
-        failureRedirect: "/users/login",
+        successRedirect: "/dashboard",
+        failureRedirect: "/login",
         failureFlash: true,
     })(req, res, next);
 });
